@@ -1,8 +1,9 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 // import props from '../data/user.json'
 
 
-const MarcupItems = ({username ,tag,location,avatar,followers,views,likes}) => {
+const MarcupItems = ({username ,tag,location,avatar,stats}) => {
+  const {followers,views,likes} = stats
     return ( <div className="profile">
     <div className="description">
       <img
