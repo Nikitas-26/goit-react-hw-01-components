@@ -1,15 +1,17 @@
-const renderTransaction = ({transctions}) => {
-    return (
-        <>
-        {transctions.map(el=>{
-       return <tr key={el.id} >
-          <td>{el.type}</td>
-          <td>{el.amount}</td>
-          <td>{el.currency}</td>
-        </tr>
-       })}
+const RenderTransaction = ({ transactions }) => {
+  return (
+    <>
+      {transactions.map((el) => {
+        return (
+          <tr key={el.id}>
+            <td>{el.type}</td>
+            <td>{el.amount}</td>
+            <td>{el.currency}</td>
+          </tr>
+        );
+      })}
     </>
-)
-    }
- 
-export default renderTransaction;
+  );
+};
+
+export default RenderTransaction;

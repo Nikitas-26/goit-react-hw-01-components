@@ -1,9 +1,7 @@
-import TransactionHistoryItem from './TransactionHistoryItem'
-// console.log(TransactionHistoryItem);
+import RenderTransaction from "./TransactionHistoryItem";
 const RenderTransactionList = ({ transactions }) => {
-    console.log(transactions);
   return (
-    <table class="transaction-history">
+    <table className="transaction-history">
       <thead>
         <tr>
           <th>Type</th>
@@ -12,9 +10,7 @@ const RenderTransactionList = ({ transactions }) => {
         </tr>
       </thead>
       <tbody>
-          <TransactionHistoryItem
-          transactions = {transactions}
-          />
+        <RenderTransaction transactions={transactions} />
       </tbody>
     </table>
   );
