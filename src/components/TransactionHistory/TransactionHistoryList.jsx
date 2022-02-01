@@ -1,12 +1,14 @@
 import RenderTransaction from "./TransactionHistoryItem";
+import PropTypes from 'prop-types';
+import s from './TransactionHistory.module.css';
 const RenderTransactionList = ({ transactions }) => {
   return (
-    <table className="transaction-history">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
+    <table className={s.transactionHistory}>
+      <thead className={s.thead}>
+        <tr className={s.trStats}>
+          <th className={s.stats}>Type</th>
+          <th className={s.stats}>Amount</th>
+          <th className={s.stats}>Currency</th>
         </tr>
       </thead>
       <tbody>
@@ -15,4 +17,13 @@ const RenderTransactionList = ({ transactions }) => {
     </table>
   );
 };
+RenderTransactionList.propTypes = {transactions: PropTypes.arrayOf(
+  PropTypes.shape(
+   { id: PropTypes.string.isRequired,
+    type:PropTypes.string.isRequired,
+    amount:PropTypes.string.isRequired,
+    currency:PropTypes.string.isRequired
+  }
+  )
+)}
 export default RenderTransactionList;
